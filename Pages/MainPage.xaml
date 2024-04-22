@@ -1,0 +1,23 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CollectionsSystemAK.MainPage"
+             Title="System kolekcji">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Dodaj kolekcję" Command="{Binding AddCollectionCommand}"/>
+    </ContentPage.ToolbarItems>
+
+    <ScrollView BackgroundColor="#121212">
+        <VerticalStackLayout Margin="10">
+            <CollectionView ItemsSource="{Binding Collections}" SelectionMode="Single" SelectionChangedCommand="{Binding DisplayItemsCommand}" SelectedItem="{Binding SelectedCollection}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="10" BackgroundColor="#1E1E1E" Margin="0,0,0,10">
+                            <Label Text="{Binding Name}" FontAttributes="Bold" TextColor="#FFFFFF"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

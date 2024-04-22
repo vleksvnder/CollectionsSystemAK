@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CollectionsSystemAK.Pages.EditItemPage"
+             Title="Edycja elementu">
+    
+    <VerticalStackLayout Spacing="15" Padding="10">
+        <Entry Text="{Binding SelectedItem.Name, Mode=TwoWay}" Placeholder="Nazwa" />
+        <Entry Text="{Binding SelectedItem.Description, Mode=TwoWay}" Placeholder="Opis" />
+        <Entry Text="{Binding SelectedItem.Price, Mode=TwoWay}" Placeholder="Cena" Keyboard="Numeric" />
+        <Entry Text="{Binding SelectedItem.Status, Mode=TwoWay}" Placeholder="Status" />
+        <Entry Text="{Binding SelectedItem.Rating, Mode=TwoWay}" Placeholder="Ocena" />
+        <Button Text="Wybierz Grafike" Command="{Binding AddImageCommand}" WidthRequest="150"/>
+        <Button Text="Zapisz zmiany"  Command="{Binding SaveItemCommand}"  BackgroundColor="DarkGreen" WidthRequest="150"/>
+        <Button Text="Usuń element" Command="{Binding DeleteItemCommand}"   BackgroundColor="Red" WidthRequest="150"/>
+    </VerticalStackLayout>
+</ContentPage>
